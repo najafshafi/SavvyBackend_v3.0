@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "vite": "^5.4.11"
+  },
+  "dependencies": {
+    "express-validator": "^7.2.0"
+  }
+}
