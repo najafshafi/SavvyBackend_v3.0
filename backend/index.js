@@ -18,7 +18,7 @@ const app = express();
 app.use(cookieParser());
 
 const corsOptions = {
-  origin: host,
+    origin: host,
   methods: ['GET', 'POST', 'PUT'],
   credentials: true,
 };
