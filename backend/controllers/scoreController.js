@@ -24,7 +24,7 @@ export const saveScore = async (req, res) => {
         }
 
         await userScore.save();
-        res.status(200).json({ message: "Score saved successfully", score: userScore });
+        res.status(200).json({ message: "Score saved successfully", score: userScore, });
     } catch (error) {
         console.error("Error saving score:", error.message);
         res.status(400).json({ message: error.message });
