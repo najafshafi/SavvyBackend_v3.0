@@ -7,6 +7,9 @@ import Chat from "./models/chat.js";
 import cookieParser from 'cookie-parser';
 import User from "./models/userChats.js";
 import { check, validationResult } from 'express-validator';
+import scoreRoutes from './routes/scoreRoutes.js';
+import quizRoutes from "./routes/quizRoutes.js";
+import leaderboardRoutes from './routes/leaderboardRoutes.js';
 
 
 // process.env.JWT_SECRET
@@ -18,7 +21,7 @@ const app = express();
 app.use(cookieParser());
 
 const corsOptions = {
-    origin: host,
+  origin: host,
   methods: ['GET', 'POST', 'PUT'],
   credentials: true,
 };
@@ -26,8 +29,15 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-app.use(express.json());
 app.use(urlencoded({ extended: true }));
+
+app.use(express.json());
+
+// Routes
+app.use('/api/quiz', quizRoutes);
+app.use('/api/score', scoreRoutes);
+app.use('/api/leaderboard', leaderboardRoutes);
+
 
 const connect = async () => {
   try {
@@ -449,6 +459,11 @@ app.post('/api/logout', (req, res) => {
 // app.get("*", (req, res) => {
 //   res.sendFile(path.join(__dirname, "../client/dist", "index.html"));
 // });
+
+
+app.use("/api", quizRoutes);
+
+
 
 app.listen(port, () => {
   connect();
