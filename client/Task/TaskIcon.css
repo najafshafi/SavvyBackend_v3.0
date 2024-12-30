@@ -1,0 +1,31 @@
+/* styles.css */
+.todo-icon {
+  position: fixed;
+  bottom: 1rem; /* Distance from the bottom of the screen */
+  left: 1rem; /* Distance from the left side of the screen */
+  z-index: 1000; /* Ensures it appears on top of other elements */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Space between icon and text */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Light background for visibility */
+  border: 1px solid #ddd; /* Optional border */
+  border-radius: 8px;
+  padding: 0.5rem 1rem; /* Padding for a better clickable area */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for a floating effect */
+  cursor: pointer; /* Pointer cursor to indicate clickability */
+}
+
+.todo-icon img {
+  width: 24px; /* Adjust icon size */
+  height: 24px;
+}
+
+.todo-icon span {
+  font-size: 1rem; /* Adjust font size */
+  font-weight: bold; /* Bold text for better visibility */
+}

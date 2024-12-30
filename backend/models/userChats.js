@@ -115,6 +115,18 @@ const userSchema = new mongoose.Schema(
         date: { type: Date, default: Date.now },
       },
     ],
+    username: {
+      type: String,
+      // required: true,
+      // unique: true,
+    },
+
+    imageUrl: String,
+
+    posts: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Post"
+    }]
   },
   { timestamps: true }
 );

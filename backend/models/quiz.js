@@ -12,6 +12,10 @@ const quizSchema = new mongoose.Schema(
             enum: ["easy", "medium", "hard"],
             required: true,
         },
+        category: {
+            type: String,
+            required: true,
+        },
         questions: [
             {
                 question: {

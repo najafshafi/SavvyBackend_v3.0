@@ -10,8 +10,8 @@ import { check, validationResult } from 'express-validator';
 import scoreRoutes from './routes/scoreRoutes.js';
 import quizRoutes from "./routes/quizRoutes.js";
 import leaderboardRoutes from './routes/leaderboardRoutes.js';
-
-
+import taskRoutes from './routes/taskRoutes.js';
+import postRoutes from './routes/postRoutes.js';
 // process.env.JWT_SECRET
 
 const port = 3003;
@@ -34,9 +34,11 @@ app.use(urlencoded({ extended: true }));
 app.use(express.json());
 
 // Routes
+app.use('/api/posts', postRoutes);
 app.use('/api/quiz', quizRoutes);
 app.use('/api/score', scoreRoutes);
 app.use('/api/leaderboard', leaderboardRoutes);
+app.use('/api/task', taskRoutes);
 
 
 const connect = async () => {

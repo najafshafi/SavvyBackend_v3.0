@@ -13,12 +13,12 @@ const scoreSchema = new mongoose.Schema(
 );
 
 // Update score and attempts before saving
-scoreSchema.pre("save", async function (next) {
-    if (!this.isModified("score")) return next();
+// scoreSchema.pre("save", async function (next) {
+//     if (!this.isModified("score")) return next();
 
-    this.attempts += 1; // Increment the attempts count each time the score is updated
-    this.lastAttempt = Date.now();
-    next();
-});
+//     this.attempts += 1; // Increment the attempts count each time the score is updated
+//     // this.lastAttempt = Date.now();
+//     next();
+// });
 
 export default mongoose.model("Score", scoreSchema);
