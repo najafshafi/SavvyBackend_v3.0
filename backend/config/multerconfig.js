@@ -1,6 +1,6 @@
-const multer = require('multer');
-const crypto = require("crypto");
-const path = require("path")
+import multer from 'multer';
+import crypto from "crypto";
+import path from "path"
 
 
 const storage = multer.diskStorage({
@@ -10,11 +10,9 @@ const storage = multer.diskStorage({
     filename: (req, file, cb) => {
         // cb(null, `ProfileImageUpload-${Date.now()}-${file.originalname}`);
         crypto.randomBytes(12, function (err, name) {
-            const fn = `ProfileImage - ` + name.toString("hex") + path.extname(file.originalname)
+            const fn = `CV - ` + name.toString("hex") + path.extname(file.originalname)
             cb(null, fn)
         })
-
-
 
     }
 });
@@ -23,4 +21,4 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 
-module.exports = upload;
+export default upload;

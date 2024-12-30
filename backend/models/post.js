@@ -6,10 +6,10 @@ import mongoose from "mongoose";
 const PostSchema = new mongoose.Schema({
     postContent: String,
     username: String,
-    user: [{
+    user: { // Single reference to a User
         type: mongoose.Schema.Types.ObjectId,
-        ref: "User"
-    }],
+        ref: "User",
+    },
     likes: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: "User"
