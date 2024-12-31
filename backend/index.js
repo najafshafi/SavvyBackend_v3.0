@@ -40,16 +40,26 @@ app.use('/api/score', scoreRoutes);
 app.use('/api/leaderboard', leaderboardRoutes);
 app.use('/api/task', taskRoutes);
 
+// mongodb+srv://najafshafee5:<oBjpKpj3ClUDDrbe>@codesavvy-v3.sjoai.mongodb.net/
+
+// const connect = async () => {
+//   try {
+//     await mongoose.connect("mongodb://localhost:27017/Chat");
+//     console.log("Connected to MongoDB");
+//   } catch (err) {
+//     console.log(err);
+//   }
+// };
+
 
 const connect = async () => {
   try {
-    await mongoose.connect("mongodb://localhost:27017/Chat");
+    await mongoose.connect("mongodb+srv://najafshafee5:oBjpKpj3ClUDDrbe@codesavvy-v3.sjoai.mongodb.net");
     console.log("Connected to MongoDB");
   } catch (err) {
     console.log(err);
   }
 };
-
 
 // const authenticate = (req, res, next) => {
 //   // Get the token from the cookies
