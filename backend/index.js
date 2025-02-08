@@ -6,7 +6,8 @@ import bcrypt from "bcryptjs";
 import Chat from "./models/chat.js";
 import cookieParser from 'cookie-parser';
 import User from "./models/userChats.js";
-import { check, validationResult } from 'express-validator';
+import { check, body, validationResult } from 'express-validator';
+
 import scoreRoutes from './routes/scoreRoutes.js';
 import quizRoutes from "./routes/quizRoutes.js";
 import leaderboardRoutes from './routes/leaderboardRoutes.js';
