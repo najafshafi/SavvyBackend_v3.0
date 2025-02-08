@@ -16,7 +16,7 @@ import postRoutes from './routes/postRoutes.js';
 // process.env.JWT_SECRET
 
 const port = 3003;
-const host = "http://localhost:3000"
+const host = "https://codesavvyy.netlify.app"
 const JWT_SECRET = 'mySuperSecretKey12345!@#$%'
 const app = express();
 app.use(cookieParser());
