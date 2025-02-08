@@ -14,7 +14,7 @@ import taskRoutes from './routes/taskRoutes.js';
 import postRoutes from './routes/postRoutes.js';
 // process.env.JWT_SECRET
 
-const port = 3003;
+const port = 1000;
 const host = "http://localhost:3000"
 const JWT_SECRET = 'mySuperSecretKey12345!@#$%'
 const app = express();
